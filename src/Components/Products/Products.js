@@ -16,7 +16,13 @@ const Products = () => {
     getData();
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      {products.map((item) => (
+        <Product img={item.images[0]} title={item.title} price={item.price} />
+      ))}
+    </div>
+  );
 };
 
 export default Products;
