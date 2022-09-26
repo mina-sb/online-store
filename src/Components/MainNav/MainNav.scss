@@ -1,0 +1,97 @@
+@import '../../App.scss';
+
+
+.main-nav{
+    display: flex;
+    margin: 0.5rem 1rem;
+    align-items:center;             
+    font-family: dosis;
+    flex-direction: row;
+    justify-content:center;
+}
+
+.logo{
+    margin-left:auto ;
+    margin-right: auto;
+    font-size: 1.9rem;
+    font-weight: 600;
+    order:-1;
+    color : $darkGray;
+ }
+
+.nav{
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    order: -2;
+    list-style: none;
+}
+.cart-menu li:last-child
+    {
+        display: none;
+    }
+
+
+    .nav li.menu-bars {
+        float: right;
+        display: block;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .nav li:not(last-child)
+      {
+          display: none;
+      }
+
+.nav li{
+    margin: 1rem 1rem;
+    font-weight: 600;
+    color : $lightGray;
+}
+.menu-bars{
+    display: none;
+    color : $darkGray;
+    font-size: 1.5rem;
+}
+
+.cart-menu{
+    order: 2;
+}
+
+@media screen and (min-width : 720px) {
+    .main-nav{
+        display: flex;        
+        justify-content: space-between;
+    }
+    
+.logo{
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin:0;
+    order: 0;
+}
+    .nav{
+        flex-direction: row;
+        margin: 0px;
+        padding: 0px;
+        order: 0;
+        display: flex;
+    }
+    .nav li:last-child
+    {
+        display: none;
+    }
+    .nav li:not(last-child)
+      {
+          display: block;
+      }
+    div .cart-menu{
+        order: 2;
+    }
+    .cart-menu li:last-child{
+        display: block;
+    }
+    
+   
+}

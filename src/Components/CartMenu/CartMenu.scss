@@ -1,0 +1,29 @@
+@import '../../App.scss';
+
+
+.cart-menu{
+    list-style: none;
+    display: flex;
+    color: $lightGray;
+    margin-block-start: 0rem;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
+}
+.cart-menu li:last-child
+    {
+        display: none;
+    }
+
+.cart-menu li{
+    margin: 0.5rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width : 720px) {
+    .cart-menu li:last-child
+    {
+        display: none;
+    }
+
+    
+}

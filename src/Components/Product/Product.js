@@ -1,13 +1,12 @@
 import React from "react";
 
-const Product = ({ img, title, price }) => {
+const Product = ({ img, title }) => {
   return (
     <div>
       <img src={img} />
       <br />
       <span>{title}</span>
       <br />
-      <span>{price}</span>
     </div>
   );
 };

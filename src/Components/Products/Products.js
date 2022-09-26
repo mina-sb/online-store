@@ -5,11 +5,15 @@ const Products = () => {
   const [products, setProducts] = useState([]);
 
   const getData = async () => {
-    const res = await fetch(
-      "https://api.escuelajs.co/api/v1/products?offset=0&limit=30"
-    );
-    const data = await res.json();
-    setProducts(data);
+    //const res = await fetch("https://api.escuelajs.co/api/v1/products");
+    //const data = await res.json();
+    //setProducts(data.results);
+
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+      });
   };
 
   useEffect(() => {
@@ -19,7 +23,7 @@ const Products = () => {
   return (
     <div>
       {products.map((item) => (
-        <Product img={item.images[0]} title={item.title} price={item.price} />
+        <Product img={item.image} title={item.title} />
       ))}
     </div>
   );
