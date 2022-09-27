@@ -1,0 +1,63 @@
+@import '../../App.scss';
+
+.banner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:#00ffff;
+   // background-image: url(../../../public/images/slide1.3.webp);
+}
+.title{
+    position: absolute;
+    left: 13%;
+    top:20%;
+}
+h1{
+    font-size: 2.2rem;
+    font-family: dosis;
+    color: $darkestGray;
+    line-height: 1rem;
+    margin-top: 3.5rem;
+}
+h2{
+    font-size: 2rem;
+    font-family: dosis;
+    font-weight: 200;
+}
+h3{
+    font-size: 1.2rem;
+    font-family: dosis;
+    font-weight: 200;
+    color: $lightGray;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    background-color: #e7c17e;
+    color: #fff;
+    display: inline-block;
+    margin-top: 2rem;
+}
+.img{
+    width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+
+
+}
+@media screen and (min-width : 820px) {
+    h1{
+        font-size: 3.2rem;
+    }
+        .btn
+        {
+            margin-bottom: 10rem;
+        }
+        .title{
+            position: absolute;
+            left: 13%;
+            top:30%;
+        }
+}
