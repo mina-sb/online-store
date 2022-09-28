@@ -1,19 +1,19 @@
 import React from "react";
 import "./CartMenu.scss";
-import { FaSearch, FaShoppingCart, FaUserAlt } from "react-icons/fa";
+import { FiSearch, FiShoppingCart, FiUser } from "react-icons/fi";
 
 const CartMenu = () => {
   return (
     <div>
       <ul className="cart-menu">
         <li>
-          <FaSearch />
+          <FiSearch />
         </li>
         <li>
-          <FaShoppingCart />
+          <FiShoppingCart />
         </li>
         <li>
-          <FaUserAlt />
+          <FiUser />
         </li>
       </ul>
     </div>
