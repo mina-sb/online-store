@@ -1,0 +1,113 @@
+@import '../../App.scss';
+
+.product{
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.img-box{
+    box-sizing: border-box;
+    margin: 1rem 1.5rem;
+    border: 1px solid $lightestGray;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+.img-box img{
+    width: 100%; /* 2 items per row, 100% / 2 = 50% */
+   height: 250px;
+   object-fit: cover; 
+}
+.btn-list{
+   position: absolute;
+   background-color: #fff;
+   width: 3.2rem;
+   height: 9rem;
+   border-radius: 25px;
+   top: 7rem;
+   right: 2.3rem;
+   transform: translate(1rem);
+   transition: all 0.5s linear;
+   visibility: hidden;
+   opacity: 0;
+   box-shadow: 0 0 4px 2px #00000012;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+}
+.product:hover .btn-list{
+    transform: translate(0rem);
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s linear;
+
+}
+.btn-list .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    color: $lightGray;
+    border-radius: 50%;
+}
+.btn-list .item:hover{
+   background-color: $cream;
+   color: #fff;
+}
+.product-title{
+    color: $lightGray;
+    font-family: dosis;
+    margin: 0.5rem 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.product-title:hover{
+    color: $cream;
+    font-weight: 500;
+    cursor: pointer;
+}
+.product-price{
+    font-family: dosis;
+    margin: 0.5rem 1.5rem;
+    margin-bottom: 3rem;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #212529;
+}
+
+@media screen and (max-width : 400px) {
+    .img-box{ 
+        margin: 0rem 0rem;
+          
+    }
+}
+
+
+@media screen and (min-width : 650px) {
+    .product{
+        flex: 1 1 50%;
+    }
+}
+
+@media screen and (min-width : 920px) {
+    .product{
+       flex: 1 1 33%;
+    }
+    .img-box img{
+        width: 100%; /* 2 items per row, 100% / 2 = 50% */
+       height: 250px;
+       object-fit: cover;
+       
+    }
+   }
+   
+
+@media screen and (min-width : 1300px) {
+ .product{
+    flex: 1 1 25%;
+ }
+}
