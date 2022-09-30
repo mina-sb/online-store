@@ -30,6 +30,7 @@ const Products = () => {
       <div className="products-list">
         {products.map((item) => (
           <Product
+            id={item.id}
             firstImg={item.images[0]}
             secondImg={item.images[1]}
             title={item.title}

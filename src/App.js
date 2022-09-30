@@ -20,7 +20,7 @@ function App() {
       <Products />
       <OfferProduct />
       {backdropState ? <Backdrop /> : ""}
-      {cartState ? <Cart /> : ""}
+      <Cart />
     </div>
   );
 }

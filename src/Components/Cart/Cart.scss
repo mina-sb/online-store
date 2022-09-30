@@ -12,6 +12,7 @@
 }
 .open{
     transform: translate(0);
+    
 }
 .close{
     transform: translate(30rem);
@@ -122,18 +123,14 @@ cursor: pointer;
 .check-out:hover , .view-cart:hover{
     background-color: $cream;
 }
-@media screen and (min-width : 550px) { 
+@media screen and (min-width :600px) { 
     .cart{
         width: 50%;
     }
-  
-  
 }
 
-@media screen and (min-width : 690px) { 
+@media screen and (min-width : 900px) { 
     .cart{
         width: 30%;
-    }
-    
- 
+    } 
 }
