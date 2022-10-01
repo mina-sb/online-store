@@ -7,6 +7,7 @@ export const AppProvider = (props) => {
   const [backdrop, setBackdrop] = useState(false);
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [navColor, setNavColor] = useState(true);
 
   return (
     <AppContext.Provider
@@ -15,6 +16,7 @@ export const AppProvider = (props) => {
         backdrop: [backdrop, setBackdrop],
         cartContext: [cart, setCart],
         cartTotalPrice: [totalPrice, setTotalPrice],
+        navColor: [navColor, setNavColor],
       }}
     >
       {props.children}

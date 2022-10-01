@@ -8,9 +8,13 @@
     font-family: dosis;
     flex-direction: row;
     justify-content:center;
+}
+.bg-w{
+    background-color: #fff;
+}
+.bg-g{
     background-color: $bg-lightGray;
 }
-
 .logo{
     margin-left:auto ;
     margin-right: auto;
