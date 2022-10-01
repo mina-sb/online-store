@@ -8,6 +8,8 @@ import {
   FaTwitter,
   FaPinterestP,
   FaFacebookF,
+  FaArrowLeft,
+  FaArrowRight,
 } from "react-icons/fa";
 import "./Detail.scss";
 
@@ -24,6 +26,7 @@ const Detail = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
   const [counter, setCounter] = useState(0);
+  const [slider, setSlider] = useState(0);
 
   const location = useLocation();
   if (location.pathname.includes("/detail")) {
@@ -79,12 +82,39 @@ const Detail = () => {
       <div className="product-container">
         <div className="product-img">
           <img
+            className={`slider-img ${
+              slider == 1 ? "go-left" : slider == 2 ? "go-right" : ""
+            }`}
             src={
               product.images && product.images.length > 0
                 ? product.images[0]
                 : ""
             }
           />
+          <img
+            className={`slider-img ${
+              slider == 1 ? "go-left" : slider == 2 ? "go-right" : ""
+            }`}
+            src={
+              product.images && product.images.length > 0
+                ? product.images[1]
+                : ""
+            }
+          />
+          <div className="slider-arrows">
+            <FaArrowLeft
+              className="arrow-left"
+              onClick={() => {
+                setSlider(1);
+              }}
+            />
+            <FaArrowRight
+              className="arrow-right"
+              onClick={() => {
+                setSlider(2);
+              }}
+            />
+          </div>
         </div>
         <div className="product-info">
           <h2>{product.title}</h2>
