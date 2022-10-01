@@ -2,11 +2,11 @@ import "./App.scss";
 import React, { useContext } from "react";
 import Backdrop from "./Components/Backdrop/Backdrop";
 import Cart from "./Components/Cart/Cart";
-import Features from "./Components/Features/Features";
-import OfferProduct from "./Components/OfferProduct/OfferProduct";
-import Products from "./Components/Products/Products";
-import Header from "./Containers/Header/Header";
+import MainNav from "./Components/MainNav/MainNav";
+import Detail from "./Components/Detail/Detail";
 import { AppContext } from "./AppContext";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Containers/Home/Home";
 
 function App() {
   const { showCart, backdrop } = useContext(AppContext);
@@ -15,10 +15,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Features />
-      <Products />
-      <OfferProduct />
+      <MainNav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/detail" element={<Detail />} />
+      </Routes>
       {backdropState ? <Backdrop /> : ""}
       <Cart />
     </div>
