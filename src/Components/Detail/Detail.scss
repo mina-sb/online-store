@@ -73,7 +73,10 @@
     font-weight: 600;
     font-family: dosis;
     letter-spacing: 0.2rem;
+    cursor: pointer;
 }
+.add-button:hover{
+    background-color: $cream;}
 .counter{
     display: flex;
     align-items: center;
@@ -90,6 +93,12 @@
     margin-left: 0.5rem;
     font-weight: 600;
      font-size: 0.8rem;
+}
+.add-btn , .remove-btn{
+    cursor: pointer;
+}
+.add-btn:hover , .remove-btn:hover{
+    color: $gray;
 }
 .add-to-wish{
     margin-top: 2rem ;

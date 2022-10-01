@@ -10,7 +10,7 @@ const OfferProduct = () => {
         </div>
         <div className="txt">
           <div className="txt-content">
-            <h3>Super Sale Enjoy 20% Off</h3>
+            <h3 className="offer-h3">Super Sale Enjoy 20% Off</h3>
             <h2>Bud Vase Set</h2>
             <p>
               A calm and captivating range of blue, green, and grey. This set

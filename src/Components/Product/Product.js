@@ -3,6 +3,7 @@ import "./Product.scss";
 import { VscPackage, VscPaintcan } from "react-icons/vsc";
 import { FiShoppingCart } from "react-icons/fi";
 import { AppContext } from "../../AppContext";
+import { Link } from "react-router-dom";
 
 const Product = ({ id, firstImg, secondImg, title, price }) => {
   const { cartContext, backdrop, showCart } = useContext(AppContext);
@@ -46,7 +47,9 @@ const Product = ({ id, firstImg, secondImg, title, price }) => {
           <VscPaintcan />
         </div>
       </div>
-      <h4 className="product-title">{title.slice(0, 20)}</h4>
+      <Link to={`/detail/${id}`}>
+        <h4 className="product-title">{title.slice(0, 20)}</h4>
+      </Link>
       <span className="product-price">{price + "$"}</span>
     </div>
   );

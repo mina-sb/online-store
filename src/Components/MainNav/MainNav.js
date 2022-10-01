@@ -32,11 +32,7 @@ const MainNav = () => {
             Home
           </Link>
         </li>
-        <li>
-          <Link to="/detail" onClick={changeNavColorDetail}>
-            Books
-          </Link>
-        </li>
+        <li>Books</li>
         <li className={flag ? "responsive" : ""}>Shop</li>
         <li className={flag ? "responsive" : ""}>Return</li>
         <li className={flag ? "responsive" : ""}>About Us</li>

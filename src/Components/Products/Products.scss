@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .products{
-    margin: 1rem 3rem 3rem;
+    margin: 1rem 0rem;
 }
 
 .products-list{
@@ -11,4 +11,8 @@
     justify-content: flex-start;
 }
 
-
+a{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}

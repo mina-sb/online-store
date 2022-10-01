@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../AppContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Products from "../Products/Products";
 import { VscTriangleDown, VscTriangleUp } from "react-icons/vsc";
 import {
@@ -9,49 +9,109 @@ import {
   FaPinterestP,
   FaFacebookF,
 } from "react-icons/fa";
-
 import "./Detail.scss";
 
 const Detail = () => {
-  const { navColor } = useContext(AppContext);
+  const { navColor, backdrop, cartContext, cartTotalPrice, showCart } =
+    useContext(AppContext);
   const [navBg, setNavBg] = navColor;
+  const [cart, setCart] = cartContext;
+  const [totalPrice, setTotalPrice] = cartTotalPrice;
+  const [cartState, setCartState] = showCart;
+  const [backdropState, setbackdropState] = backdrop;
+
   const [tab, setTab] = useState(0);
+  const [product, setProduct] = useState({});
+  const { id } = useParams();
+  const [counter, setCounter] = useState(0);
 
   const location = useLocation();
-  if (location.pathname === "/detail") {
+  if (location.pathname.includes("/detail")) {
     setNavBg(false);
   }
+
+  const getProduct = async () => {
+    const res = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
+    const data = await res.json();
+    setProduct(data);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  const addToCart = () => {
+    if (counter > 0) {
+      const productIndex = cart.findIndex((item) => item.id == id);
+      if (productIndex < 0) {
+        setCart([
+          ...cart,
+          {
+            id: id,
+            img: product.images[0],
+            title: product.title,
+            price: product.price,
+            count: counter,
+          },
+        ]);
+        setbackdropState(true);
+        setCartState(true);
+      } else {
+        let tempCart = [...cart];
+        tempCart[productIndex].count += counter;
+        setCart(tempCart);
+        setbackdropState(true);
+        setCartState(true);
+      }
+    }
+  };
 
   return (
     <div className="detail">
       <div className="bread-crumb">
         <span>Home</span>
-        <span>></span>
+        <span>retE</span>
         <span>Tall Vase in Midnight</span>
-        <span> ></span>
+        <span> dsf</span>
         <span> 254</span>
       </div>
       <div className="product-container">
         <div className="product-img">
-          <img src="https://cdn.lorem.space/images/furniture/.cache/640x480/paul-hanaoka-JUJ5osLgXpQ-unsplash.jpg" />
+          <img
+            src={
+              product.images && product.images.length > 0
+                ? product.images[0]
+                : ""
+            }
+          />
         </div>
         <div className="product-info">
-          <h2>Tall Vase In Midnight</h2>
-          <h3>$225.00 USD</h3>
+          <h2>{product.title}</h2>
+          <h3>${product.price} USD</h3>
           <hr className="hr" />
-          <p>
-            Made up of a small team of potters and glazers, the Clay Studio
-            forms and creates anew, continuously, and together. Designing and
-            making is fluid and open, leaving room for creativity, changing our
-            mind, introducing new techniques, and limited, one-of-a-kind pieces.
-          </p>
+          <p>{product.description}</p>
           <div className="add-to-cart">
-            <a className="add-button">ADD TO CART</a>
+            <a className="add-button" onClick={addToCart}>
+              ADD TO CART
+            </a>
             <div className="counter">
-              2
+              {counter}
               <div className="add-remove">
-                <VscTriangleUp />
-                <VscTriangleDown />
+                <VscTriangleUp
+                  className="add-btn"
+                  onClick={() => {
+                    setCounter(counter + 1);
+                  }}
+                />
+                <VscTriangleDown
+                  className="remove-btn"
+                  onClick={() => {
+                    if (counter > 0) {
+                      setCounter(counter - 1);
+                    }
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -61,9 +121,6 @@ const Detail = () => {
           </div>
           <div className="categories">
             <span className="cat-title">Categories :</span>
-            <span className="cat-links">Hot Deal,</span>
-            <span className="cat-links"> New,</span>
-            <span className="cat-links"> New Arrivals</span>
           </div>
           <div className="share">
             <span className="share-title">SHARE :</span>
@@ -99,7 +156,13 @@ const Detail = () => {
               </p>
               <div className="product-container">
                 <div className="product-img">
-                  <img src="https://cdn.lorem.space/images/furniture/.cache/640x480/paul-hanaoka-JUJ5osLgXpQ-unsplash.jpg" />
+                  <img
+                    src={
+                      product.images && product.images.length > 0
+                        ? product.images[1]
+                        : ""
+                    }
+                  />
                 </div>
                 <div className="product-info margin-top">
                   <h3 className="discription-title">
@@ -116,10 +179,7 @@ const Detail = () => {
                 </div>
               </div>
             </div>
-            <div
-              className="additional-info"
-              className={`additional-info ${tab == 1 ? "show" : "hide"}`}
-            >
+            <div className={`additional-info ${tab == 1 ? "show" : "hide"}`}>
               <p>
                 Plants has no restrictions on the length of manuscripts,
                 provided that the text is concise and comprehensive. Full
