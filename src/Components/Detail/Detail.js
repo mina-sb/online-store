@@ -185,7 +185,7 @@ const Detail = () => {
                 Redwood glaze.
               </p>
               <div className="product-container">
-                <div className="product-img">
+                <div className="product-img pad-0">
                   <img
                     src={
                       product.images && product.images.length > 0
