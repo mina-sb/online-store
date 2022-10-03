@@ -37,7 +37,6 @@ const Detail = () => {
     const res = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
     const data = await res.json();
     setProduct(data);
-    console.log(data);
   };
 
   useEffect(() => {

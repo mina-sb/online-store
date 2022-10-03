@@ -1,0 +1,55 @@
+@import '../../App.scss';
+
+.search-container{
+    height: 6rem;
+    transition: all .5s;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    background-color: $white;
+    z-index: 1000;
+    transform: translateY(-6rem); 
+}
+.show{
+    transition: all .5s;
+    transform: translateY(0rem); 
+}
+.search{  
+    display: flex;
+    justify-content:center;
+}
+.search div{
+    width: 60%;
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px $gray solid;
+    margin-bottom: 2rem;
+    padding-bottom: 0.4rem;
+    flex: 0 0 60%;
+}
+.search-input{
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-family: dosis;
+    font-weight: 600;
+    color: $darkGray;  
+}
+.search-input::placeholder{color: $lightGray; }
+.search-icon{
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: $lightGray;  
+}
+.close-search-btn{
+    font-size: 1.5rem;
+    color: $lightGray; 
+    cursor: pointer;
+    padding: 1.1rem;
+    position: absolute;
+    top:0rem;
+    right: 0rem;
+}

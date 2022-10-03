@@ -7,11 +7,15 @@ import Detail from "./Components/Detail/Detail";
 import { AppContext } from "./AppContext";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Containers/Home/Home";
+import Search from "./Components/Search/Search";
+import Products from "./Components/Products/Products";
+import SearchResults from "./Components/SearchResults/SearchResults";
 
 function App() {
-  const { showCart, backdrop } = useContext(AppContext);
+  const { showCart, backdrop, searchState } = useContext(AppContext);
   const [cartState, setCartState] = showCart;
   const [backdropState, setbackdropState] = backdrop;
+  const [search, setSearch] = searchState;
 
   return (
     <div className="App">
@@ -19,9 +23,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/search" element={<SearchResults />} />
       </Routes>
       {backdropState ? <Backdrop /> : ""}
       <Cart />
+      <Search />
     </div>
   );
 }
