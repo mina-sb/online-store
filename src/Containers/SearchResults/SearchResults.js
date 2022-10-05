@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Products from "../Products/Products";
+import Products from "../../Components/Products/Products";
 import "./SearchResults.scss";
 import { AppContext } from "../../AppContext";
 import { useLocation } from "react-router-dom";

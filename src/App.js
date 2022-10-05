@@ -9,7 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./Containers/Home/Home";
 import Search from "./Components/Search/Search";
 import Products from "./Components/Products/Products";
-import SearchResults from "./Components/SearchResults/SearchResults";
+import SearchResults from "./Containers/SearchResults/SearchResults";
 
 function App() {
   const { showCart, backdrop, searchState } = useContext(AppContext);
