@@ -20,7 +20,7 @@
     justify-content:center;
 }
 .search div{
-    width: 60%;
+    width: 80%;
     margin-top: 2.5rem;
     display: flex;
     align-items: center;
@@ -52,4 +52,9 @@
     position: absolute;
     top:0rem;
     right: 0rem;
+}
+@media screen and (min-width : 720px) {
+    .search div{
+        width: 60%;
+    }
 }
