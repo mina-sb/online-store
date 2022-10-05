@@ -43,6 +43,26 @@
     padding-left: 1.3rem;
 
 }
+.empty-cart{ 
+    margin-top: 45%;
+    text-align: center; 
+}
+.empty-cart-span{
+    display: block;  
+    margin-bottom: 1rem;
+    font-family: dosis;
+    font-weight: 400;
+}
+.empty-cart-btn{
+    padding: 1rem 3rem;
+    background-color: $black;
+    color: $white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.empty-cart-btn:hover{
+    background-color: $cream;
+}
 .cart-item{
     display: flex;
     flex-direction: row;
