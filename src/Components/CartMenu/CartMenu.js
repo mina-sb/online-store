@@ -4,12 +4,13 @@ import { FiSearch, FiShoppingCart, FiUser } from "react-icons/fi";
 import { AppContext } from "../../AppContext";
 
 const CartMenu = () => {
-  const { showCart, backdrop, cartContext, searchState } =
+  const { showCart, backdrop, cartContext, searchState, loginState } =
     useContext(AppContext);
   const [cartState, setCartState] = showCart;
   const [backdropState, setbackdropState] = backdrop;
   const [cart, setCart] = cartContext;
   const [search, setSearch] = searchState;
+  const [showLogin, setShowLogin] = loginState;
 
   const openCart = () => {
     setCartState(true);
@@ -17,6 +18,10 @@ const CartMenu = () => {
   };
   const openSearch = () => {
     setSearch(true);
+    setbackdropState(true);
+  };
+  const openLogin = () => {
+    setShowLogin(true);
     setbackdropState(true);
   };
 
@@ -36,7 +41,7 @@ const CartMenu = () => {
           <span className="badge">{total}</span>
         </li>
         <li>
-          <FiUser />
+          <FiUser onClick={openLogin} />
         </li>
       </ul>
     </div>

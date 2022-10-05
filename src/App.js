@@ -10,6 +10,7 @@ import Home from "./Containers/Home/Home";
 import Search from "./Components/Search/Search";
 import Products from "./Components/Products/Products";
 import SearchResults from "./Containers/SearchResults/SearchResults";
+import Login from "./Components/Login/Login";
 
 function App() {
   const { showCart, backdrop, searchState } = useContext(AppContext);
@@ -28,6 +29,7 @@ function App() {
       {backdropState ? <Backdrop /> : ""}
       <Cart />
       <Search />
+      <Login />
     </div>
   );
 }

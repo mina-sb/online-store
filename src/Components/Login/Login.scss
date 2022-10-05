@@ -1,0 +1,77 @@
+@import '../../App.scss';
+
+.login{
+    width: 25%;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 1.8rem;
+    left: 32%;
+    transform: translateY(-50rem);
+    transition: all 2s;
+    z-index: 10000;
+    padding: 1.5rem 4.5rem 3rem;
+}
+.login-show{
+    transform: translateY(1.8rem);
+}
+.login-title{
+    font-size: 2.1rem;
+    text-align: center;
+    margin-block-end: 0em;
+}
+.login-sub-title{
+    color: $darkGray;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-block-start: 0em;
+    font-weight: 300;
+}
+.login-input{
+    padding: 1rem;
+    border: 1px solid $lightestGray;
+    outline: none;
+    color: $darkGray;
+    font-size: 0.8rem;
+}
+.login-input::placeholder{
+    font-size: 0.7rem;
+}
+.forget-password{
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+    color: $lighterGray;
+    letter-spacing: normal;
+    cursor: pointer;
+}
+.forget-password:hover{
+    color: $cream;
+}
+.login-btn{
+    padding: 1rem 3rem;
+    background-color: $black;
+    color: $white;
+    font-size: 0.9rem;
+    margin-top: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+}
+.register-btn{
+    padding: 1rem 3rem;
+    background-color: $lightestGray-2;
+    color: $darkGray;
+    font-size: 0.9rem;
+    margin-top: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+}
+.register-btn span{
+    color: $lightGray;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    letter-spacing: normal;
+}
+.register-btn span:hover{
+    color: $cream;
+}
