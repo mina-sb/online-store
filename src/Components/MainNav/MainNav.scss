@@ -31,11 +31,6 @@
     order: -2;
     list-style: none;
 }
-.cart-menu li:last-child
-    {
-        display: none;
-    }
-
 
     .nav li.menu-bars {
         float: right;
@@ -100,7 +95,5 @@
     }
     .cart-menu li:last-child{
         display: block;
-    }
-    
-   
+    }   
 }

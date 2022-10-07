@@ -9,10 +9,6 @@
     margin-block-end: 0em;
     padding-inline-start: 0px;
 }
-.cart-menu li:last-child
-    {
-        display: none;
-    }
 
 .cart-menu li{
     margin: 0.5rem;
@@ -33,10 +29,5 @@
     font-size: 0.8rem;
 }
 @media screen and (min-width : 720px) {
-    .cart-menu li:last-child
-    {
-        display: none;
-    }
-
     
 }
