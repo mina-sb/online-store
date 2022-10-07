@@ -1,0 +1,99 @@
+@import '../../App.scss';
+
+.footer{
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.contact 
+{ display: flex;
+flex-direction: column;
+padding: 1rem;
+box-sizing: border-box;
+flex: 1 1 100%;
+}
+
+.our-product , .our-store , .our-company , .subscribe
+{ display: flex;
+flex-direction: column;
+padding: 1rem;
+box-sizing: border-box;
+flex: 1 1 100%;
+}
+
+
+.contact p{
+    text-align: justify;
+    line-height: 1.5rem;
+     padding-right: 1rem;
+     color: $lighterGray;
+     font-weight: 400;
+ }
+ .contact hr{
+    width: 30%;
+ }
+ .share-btns{
+    padding: 0.8rem;
+    color: $darkGray;
+    border: 2px solid $darkGray;
+    border-radius: 50%;
+    margin-left: 0;
+    margin-right: 1rem;
+    transition: all 1s;
+ }
+ .share-btns:hover{
+    padding: 0.8rem;
+    color: $white;
+    background-color: $cream;
+    border: 2px solid $cream;
+ 
+ }
+ .footer-span{
+    margin-top: 1rem;
+ }
+ .footer-hr{
+    width: 40%;
+ }
+ .our-product p, .our-store p , .our-company p , .subscribe p{
+color: $darkestGray; 
+margin-block-start: 0em;
+transition: all 0.25s;
+cursor: pointer;
+
+}
+.our-product p:hover, .our-store p:hover , .our-company p:hover , .subscribe p:hover{
+    color: $cream;
+    font-weight: 400;
+    }
+@media screen and (min-width :  620px) {
+    .contact 
+    {
+    flex: 1 1 50%;
+    }
+    .logo{
+        text-align: left;
+    }
+    .our-product , .our-store , .our-company , .subscribe
+    {
+    flex: 1 1 50%;
+    }   
+    }
+@media screen and (min-width : 820px) {
+.contact 
+{
+flex: 1 1 26%;
+}
+.logo{
+    text-align: left;
+}
+.our-product , .our-store , .our-company , .subscribe
+{
+flex: 1 1 18.5%;
+}   
+}

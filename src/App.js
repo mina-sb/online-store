@@ -11,6 +11,7 @@ import Search from "./Components/Search/Search";
 import Products from "./Components/Products/Products";
 import SearchResults from "./Containers/SearchResults/SearchResults";
 import Login from "./Components/Login/Login";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const { showCart, backdrop, searchState } = useContext(AppContext);
@@ -30,6 +31,7 @@ function App() {
       <Cart />
       <Search />
       <Login />
+      <Footer />
     </div>
   );
 }
