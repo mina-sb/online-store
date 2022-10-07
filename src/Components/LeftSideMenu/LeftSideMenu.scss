@@ -1,0 +1,77 @@
+@import '../../App.scss';
+
+.left-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: $bg-lighterGray;
+    z-index: 1000;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.left-menu-open{
+    transform: translate(0rem);
+    
+}
+.left-menu-close{
+    transform: translate(-50rem);
+}
+.left-menu-hearder{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    background-color: $black;
+    padding-left: 1.5rem;
+}
+.left-menu-title{
+    color: $white;
+    padding: 1.1rem 0.3rem;
+}
+
+.menu{
+    margin-bottom: auto;
+}
+.menu ul{
+    list-style: none;
+    margin-block-start: 0em;
+    padding-inline-start: 0px;
+    margin-top: 1rem;
+
+}
+.menu-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+}
+.menu-item a{
+    font-weight: 200;
+}
+.close-leftMenu{
+    width: 100%;
+    background-color: $cream;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+.close-leftMenu span{
+    color: $white;
+    cursor: pointer;
+}
+
+@media screen and (min-width : 700px) {
+    .left-menu{
+        width: 40%;
+    }
+}
+
+@media screen and (min-width : 900px) {
+    .left-menu{
+        width: 30%;
+    }
+}

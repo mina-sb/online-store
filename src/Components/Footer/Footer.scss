@@ -10,16 +10,7 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
-
-.contact 
-{ display: flex;
-flex-direction: column;
-padding: 1rem;
-box-sizing: border-box;
-flex: 1 1 100%;
-}
-
-.our-product , .our-store , .our-company , .subscribe
+.contact , .our-product , .our-store , .our-company , .subscribe
 { display: flex;
 flex-direction: column;
 padding: 1rem;
@@ -67,32 +58,34 @@ transition: all 0.25s;
 cursor: pointer;
 
 }
+.subscribe-input{
+    width: 100%;
+}
+.subscribe-btn{
+    width: 100%;
+    background-color: $black;
+    outline: none;
+    padding: 0.3rem;
+}
 .our-product p:hover, .our-store p:hover , .our-company p:hover , .subscribe p:hover{
     color: $cream;
     font-weight: 400;
     }
+   
 @media screen and (min-width :  620px) {
-    .contact 
-    {
-    flex: 1 1 50%;
-    }
-    .logo{
-        text-align: left;
-    }
-    .our-product , .our-store , .our-company , .subscribe
+    
+    .contact , .our-product , .our-store , .our-company , .subscribe
     {
     flex: 1 1 50%;
     }   
     }
-@media screen and (min-width : 820px) {
-.contact 
+@media screen and (min-width : 1050px) {
+.contact ,  .subscribe 
 {
-flex: 1 1 26%;
+flex: 1 1 22.25%;
 }
-.logo{
-    text-align: left;
-}
-.our-product , .our-store , .our-company , .subscribe
+
+.our-product , .our-store , .our-company 
 {
 flex: 1 1 18.5%;
 }   

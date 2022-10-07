@@ -14,6 +14,7 @@ export const AppProvider = (props) => {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [phrase, setPhrase] = useState("");
   const [showLogin, setShowLogin] = useState(false);
+  const [leftmenu, setLeftmenu] = useState(false);
 
   return (
     <AppContext.Provider
@@ -29,6 +30,7 @@ export const AppProvider = (props) => {
         showSearchResultsFlag: [showSearchResults, setShowSearchResults],
         serachPhrase: [phrase, setPhrase],
         loginState: [showLogin, setShowLogin],
+        leftmenuState: [leftmenu, setLeftmenu],
       }}
     >
       {props.children}

@@ -8,11 +8,17 @@ import { AppContext } from "../../AppContext";
 const MainNav = () => {
   const [flag, setFlag] = useState(false);
 
-  const { navColor } = useContext(AppContext);
+  const { navColor, leftmenuState, backdrop } = useContext(AppContext);
   const [navBg, setNavBg] = navColor;
+  const [leftmenu, setLeftmenu] = leftmenuState;
+  const [backdropState, setbackdropState] = backdrop;
 
   const showMenu = () => {
     setFlag(!flag);
+  };
+  const showLeftMenu = () => {
+    setLeftmenu(true);
+    setbackdropState(true);
   };
 
   const changeNavColorHome = () => {
@@ -38,7 +44,7 @@ const MainNav = () => {
         <li className={flag ? "responsive" : ""}>About Us</li>
         <li className={flag ? "responsive" : ""}>Contact Us</li>
         <li className="menu-bars">
-          <FaBars onClick={showMenu} />
+          <FaBars onClick={showLeftMenu} />
         </li>
       </ul>
       <CartMenu className="cart-menu" onClick={showMenu} />
