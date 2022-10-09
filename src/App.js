@@ -13,6 +13,7 @@ import SearchResults from "./Containers/SearchResults/SearchResults";
 import Login from "./Components/Login/Login";
 import Footer from "./Components/Footer/Footer";
 import LeftSideMenu from "./Components/LeftSideMenu/LeftSideMenu";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 function App() {
   const { showCart, backdrop, searchState } = useContext(AppContext);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
       {backdropState ? <Backdrop /> : ""}
       <Cart />

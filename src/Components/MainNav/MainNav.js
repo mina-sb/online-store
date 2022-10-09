@@ -41,7 +41,9 @@ const MainNav = () => {
         <li>Books</li>
         <li className={flag ? "responsive" : ""}>Shop</li>
         <li className={flag ? "responsive" : ""}>Return</li>
-        <li className={flag ? "responsive" : ""}>About Us</li>
+        <li className={flag ? "responsive" : ""}>
+          <Link to="/about">About Us</Link>
+        </li>
         <li className={flag ? "responsive" : ""}>Contact Us</li>
         <li className="menu-bars">
           <FaBars onClick={showLeftMenu} />

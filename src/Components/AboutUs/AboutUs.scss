@@ -1,0 +1,168 @@
+@import '../../App.scss';
+
+.AboutUs-header{
+    background: url('https://cdn.shopify.com/s/files/1/0304/5739/7386/files/bg_collection.jpg?v=1613680507') center;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about-h3{
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: $darkGray;
+    border-bottom: 1px solid $cream;
+    padding-bottom: 5px;
+}
+
+.about-span{
+    font-size: 0.8rem;
+    color: $lightGray;
+}
+.who-we-are{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 2rem;
+}
+
+.who-we-are-img{
+    flex: 0 0 50%;
+transition: all 1s;
+}
+.who-we-are-img:hover{
+    filter: grayscale(0.5);
+}
+.who-we-are-info{
+    flex: 0 0 50%;
+
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+}
+.info-h3{
+    font-size: 2.6rem;
+    font-weight: 200;
+    color: $darkGray;
+    margin-block-end: 0em;
+}
+.info-h4{
+    font-size: 1.2rem;
+    color: $lightGray;
+    font-weight: 200;
+    margin-block-start: 0em;
+    border-bottom: 2px solid $cream;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.info-p{
+    color: $darkestGray;
+    line-height: 1.9rem;  
+    font-weight: 200;
+}
+.reasons{
+    background: url('https://cdn.shopify.com/s/files/1/0304/5739/7386/files/bg_about.jpg?v=1613680646') center;
+    height: 29rem;
+}
+.reasons-h2{
+    text-align: center;
+    color: $white;
+    padding-top: 5rem;
+    font-weight: 200;
+    font-size: 2.6rem;
+}
+.reason-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
+.reason{
+    flex: 0 0 33%;
+    text-align: center;
+    flex-direction: column;
+}
+.reason-icon{
+    color: $white;
+    font-size: 2.7rem;
+    transition: all 2s ease;
+}
+.reason-icon:hover{
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+}
+.reason-h4{
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-block-end: 0.9rem;
+}
+.reason-p{
+    color: $white;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-block-start: 0rem;
+}
+.border-right{
+    border-right: $white 1px solid;
+}
+.on-instagram{
+    text-align: center;
+}
+.instagram-h2{
+    color: $darkGray;
+    padding-top: 5rem;
+    font-weight: 300;
+    font-size: 2.3rem;
+}
+.instagram-p{
+    color: $lightGray;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-block-start: 0rem;
+    padding-bottom: 1rem;
+    border-bottom: $cream 2px solid;
+    display: inline-block;
+}
+.instagram-posts{
+    display: flex;
+
+}
+.instagram-post{
+    flex: 0 0 25%;
+    overflow: hidden;
+    position: relative;
+    transform: all 2s
+}
+
+.instagram-post:hover .instagram-post-img{
+    transform: scale(1.2);
+}
+.instagram-post:hover .hover-img{
+    opacity: 1;
+}
+.instagram-post-img{
+    border-radius: 0px;
+    transition: transform 3s;
+}
+.img-con{
+    position: relative;
+}
+.hover-img{
+    background-color: $black;
+    position: absolute;
+    width: 10rem;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.instagram-icon{
+    font-size: 2rem;
+    font-weight: 500;
+    color: $white;
+    cursor: pointer;
+}
