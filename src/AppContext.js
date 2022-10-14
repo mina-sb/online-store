@@ -15,6 +15,7 @@ export const AppProvider = (props) => {
   const [phrase, setPhrase] = useState("");
   const [showLogin, setShowLogin] = useState(false);
   const [leftmenu, setLeftmenu] = useState(false);
+  const [wishlist, setWishlist] = useState([]);
 
   return (
     <AppContext.Provider
@@ -31,6 +32,7 @@ export const AppProvider = (props) => {
         serachPhrase: [phrase, setPhrase],
         loginState: [showLogin, setShowLogin],
         leftmenuState: [leftmenu, setLeftmenu],
+        wishlistContext: [wishlist, setWishlist],
       }}
     >
       {props.children}

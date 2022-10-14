@@ -10,6 +10,7 @@ const Products = (props) => {
   const [products, setProducts] = productsContext;
   const [searchResult, setSearchResult] = searchResultArray;
   const [showSearchResults, setShowSearchResults] = showSearchResultsFlag;
+
   const [source, setSource] = useState([]);
 
   const getData = async () => {
@@ -29,26 +30,26 @@ const Products = (props) => {
 
   useEffect(() => {
     if (!showSearchResults) {
-      console.log("show products");
       getData();
     } else {
       setSource(searchResult);
-      console.log("show results");
     }
   }, [searchResult, showSearchResults]);
 
   return (
     <div className="products">
       <div className="products-list">
-        {source.map((item) => (
-          <Product
-            id={item.id}
-            firstImg={item.images[0]}
-            secondImg={item.images[1]}
-            title={item.title}
-            price={item.price}
-          />
-        ))}
+        {source.length > 0
+          ? source.map((item) => (
+              <Product
+                id={item.id}
+                firstImg={item.images[0]}
+                secondImg={item.images[1]}
+                title={item.title}
+                price={item.price}
+              />
+            ))
+          : source.length}
       </div>
     </div>
   );

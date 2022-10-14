@@ -40,7 +40,9 @@ const MainNav = () => {
         </li>
         <li>Books</li>
         <li className={flag ? "responsive" : ""}>Shop</li>
-        <li className={flag ? "responsive" : ""}>Return</li>
+        <li>
+          <Link to="/wishlist">Wishlist</Link>
+        </li>
         <li className={flag ? "responsive" : ""}>
           <Link to="/about">About Us</Link>
         </li>

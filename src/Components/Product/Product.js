@@ -1,16 +1,22 @@
 import React, { useContext, useState } from "react";
 import "./Product.scss";
-import { VscPackage, VscPaintcan } from "react-icons/vsc";
+import { VscPaintcan } from "react-icons/vsc";
 import { FiShoppingCart } from "react-icons/fi";
 import { AppContext } from "../../AppContext";
 import { Link } from "react-router-dom";
+import { FaRegHeart } from "react-icons/fa";
 
-const Product = ({ id, firstImg, secondImg, title, price }) => {
-  const { cartContext, backdrop, showCart } = useContext(AppContext);
+const Product = ({ id, firstImg, title, price }) => {
+  const { cartContext, backdrop, showCart, wishlistContext, productsContext } =
+    useContext(AppContext);
   const [cart, setCart] = cartContext;
   const [backdropState, setbackdropState] = backdrop;
   const [cartState, setCartState] = showCart;
+  const [wishlist, setWishlist] = wishlistContext;
+  const [products, setProducts] = productsContext;
+
   const [img, setImg] = useState(false);
+
   const changeImg = () => {
     setImg(!img);
   };
@@ -31,6 +37,14 @@ const Product = ({ id, firstImg, secondImg, title, price }) => {
     setCartState(true);
   };
 
+  const addToWishlist = () => {
+    const productExist = wishlist.findIndex((item) => item.id == id);
+    if (productExist < 0) {
+      const productIndex = products.findIndex((item) => item.id == id);
+      setWishlist([...wishlist, products[productIndex]]);
+    }
+  };
+
   return (
     <div className="product">
       <div className="img-box">
@@ -41,7 +55,7 @@ const Product = ({ id, firstImg, secondImg, title, price }) => {
           <FiShoppingCart onClick={addToCart} />
         </div>
         <div className="item">
-          <VscPackage />
+          <FaRegHeart onClick={addToWishlist} />
         </div>
         <div className="item">
           <VscPaintcan />

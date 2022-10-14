@@ -15,6 +15,7 @@ import Footer from "./Components/Footer/Footer";
 import LeftSideMenu from "./Components/LeftSideMenu/LeftSideMenu";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import CartDetail from "./Components/CartDetail/CartDetail";
+import WishList from "./Components/WishList/WishList";
 
 function App() {
   const { showCart, backdrop, searchState } = useContext(AppContext);
@@ -31,6 +32,7 @@ function App() {
         <Route path="/search" element={<SearchResults />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/cart" element={<CartDetail />} />
+        <Route path="/wishlist" element={<WishList />} />
       </Routes>
       {backdropState ? <Backdrop /> : ""}
       <Cart />

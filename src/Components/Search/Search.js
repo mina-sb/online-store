@@ -34,10 +34,8 @@ const Search = () => {
     let tempArr = products.filter((item) => {
       return item.title.toLowerCase().includes(input.toLowerCase());
     });
-    console.log(tempArr.length);
 
     setSearchResult(tempArr);
-    console.log(searchResult.length);
     navigate("/search");
     setShowSearchResults(true);
     setSearch(false);
