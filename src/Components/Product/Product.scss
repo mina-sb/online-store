@@ -53,11 +53,14 @@
     font-size: 1.3rem;
     color: $lightGray;
     border-radius: 50%;
+    position: relative;
+
 }
 .btn-list .item:hover{
    background-color: $cream;
    color: #fff;
 }
+
 .product-title{
     color: $lightGray;
     font-family: dosis;
@@ -79,6 +82,37 @@
     font-weight: 500;
     color: #212529;
 }
+
+.tooltip{
+    visibility: hidden;
+    position: absolute;
+    top:-40px;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    font-size: 0.8rem;
+    letter-spacing: normal;
+    z-index: 90;
+    width: 70px;
+    padding: 0.6rem 0.3rem;
+    color: $white;
+    text-align: center;
+    border-radius: 5px;
+    transform: translateY(-0.5rem);
+}
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  .btn-list .item:hover .tooltip{
+    visibility: visible;
+    transform: translateY(0rem);
+
+  }
 
 @media screen and (max-width : 400px) {
     .img-box{ 

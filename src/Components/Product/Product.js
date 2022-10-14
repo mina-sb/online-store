@@ -63,6 +63,7 @@ const Product = ({ id, firstImg, title, price }) => {
       <div className="btn-list">
         <div className="item">
           <FiShoppingCart onClick={addToCart} />
+          <span className="tooltip">add to cart</span>
         </div>
         <div className="item">
           {wished > -1 ? (
@@ -70,9 +71,15 @@ const Product = ({ id, firstImg, title, price }) => {
           ) : (
             <FaRegHeart onClick={addToWishlist} />
           )}
+          {wished > -1 ? (
+            <span className="tooltip">remove from wishlist</span>
+          ) : (
+            <span className="tooltip">add to wishlist</span>
+          )}
         </div>
         <div className="item">
-          <VscPaintcan />
+          <VscPaintcan className="quick-view-btn" />
+          <span className="tooltip">quick view</span>
         </div>
       </div>
       <Link to={`/detail/${id}`}>
