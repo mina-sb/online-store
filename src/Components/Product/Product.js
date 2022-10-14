@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Product.scss";
 import { VscPaintcan } from "react-icons/vsc";
 import { FiShoppingCart } from "react-icons/fi";
 import { AppContext } from "../../AppContext";
 import { Link } from "react-router-dom";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const Product = ({ id, firstImg, title, price }) => {
   const { cartContext, backdrop, showCart, wishlistContext, productsContext } =
@@ -16,6 +16,7 @@ const Product = ({ id, firstImg, title, price }) => {
   const [products, setProducts] = productsContext;
 
   const [img, setImg] = useState(false);
+  const [wished, setWished] = useState(-1);
 
   const changeImg = () => {
     setImg(!img);
@@ -39,11 +40,20 @@ const Product = ({ id, firstImg, title, price }) => {
 
   const addToWishlist = () => {
     const productExist = wishlist.findIndex((item) => item.id == id);
-    if (productExist < 0) {
+    if (wished < 0) {
       const productIndex = products.findIndex((item) => item.id == id);
       setWishlist([...wishlist, products[productIndex]]);
+      setWished(0);
+    } else {
+      setWished(-1);
+      let temp = wishlist;
+      temp.splice(productExist, 1);
+      setWishlist([...temp]);
     }
   };
+  useEffect(() => {
+    setWished(wishlist.findIndex((item) => item.id == id));
+  }, []);
 
   return (
     <div className="product">
@@ -55,7 +65,11 @@ const Product = ({ id, firstImg, title, price }) => {
           <FiShoppingCart onClick={addToCart} />
         </div>
         <div className="item">
-          <FaRegHeart onClick={addToWishlist} />
+          {wished > -1 ? (
+            <FaHeart onClick={addToWishlist} />
+          ) : (
+            <FaRegHeart onClick={addToWishlist} />
+          )}
         </div>
         <div className="item">
           <VscPaintcan />

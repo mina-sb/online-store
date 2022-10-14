@@ -5,11 +5,16 @@ import Product from "../Product/Product";
 import "./Products.scss";
 
 const Products = (props) => {
-  const { productsContext, searchResultArray, showSearchResultsFlag } =
-    useContext(AppContext);
+  const {
+    productsContext,
+    searchResultArray,
+    showSearchResultsFlag,
+    wishlistContext,
+  } = useContext(AppContext);
   const [products, setProducts] = productsContext;
   const [searchResult, setSearchResult] = searchResultArray;
   const [showSearchResults, setShowSearchResults] = showSearchResultsFlag;
+  const [wishlist, setWishlist] = wishlistContext;
 
   const [source, setSource] = useState([]);
 
@@ -29,19 +34,21 @@ const Products = (props) => {
   };
 
   useEffect(() => {
+    console.log("ds");
     if (!showSearchResults) {
       getData();
     } else {
       setSource(searchResult);
     }
-  }, [searchResult, showSearchResults]);
+  }, [searchResult, showSearchResults, wishlist]);
 
   return (
     <div className="products">
       <div className="products-list">
         {source.length > 0
-          ? source.map((item) => (
+          ? source.map((item, index) => (
               <Product
+                key={index}
                 id={item.id}
                 firstImg={item.images[0]}
                 secondImg={item.images[1]}

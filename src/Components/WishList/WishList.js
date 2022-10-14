@@ -16,7 +16,7 @@ const WishList = () => {
   useEffect(() => {
     setShowSearchResults(true);
     setSearchResult(wishlist);
-  });
+  }, [wishlist]);
 
   return (
     <div>
