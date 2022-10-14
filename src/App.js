@@ -23,7 +23,7 @@ function App() {
   const [search, setSearch] = searchState;
 
   return (
-    <div className="App">
+    <div className={backdropState ? "App fixed" : "App"}>
       <MainNav />
       <Routes>
         <Route path="/" element={<Home />} />

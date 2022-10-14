@@ -32,6 +32,15 @@
 body{
     font-family: dosis;
 }
+.fixed{
+    position: fixed;
+}
+
+
+
+
+
+
 
 $darkGray : #333;
 $lightGray : #555;
@@ -47,3 +56,12 @@ $lightestGray:#e2e2e2;
 $lightestGray-2:#f2f2f2;
 $black : #000;
 $white : #fff;
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+ 
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $lighterGray;
+  }
