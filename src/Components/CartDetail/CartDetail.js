@@ -1,0 +1,71 @@
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../AppContext";
+import CartItem from "../CartItem/CartItem";
+import "./CartDetail.scss";
+const CartDetail = () => {
+  const { cartContext, cartTotalPrice } = useContext(AppContext);
+  const [cart, setCart] = cartContext;
+  const [totalPrice, setTotalPrice] = cartTotalPrice;
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <div className="cart-detail-header">
+        <h3 className="cart-h3">Cart</h3>
+        <span className="cart-span"> HOM - YOUR SHOPPING CART</span>
+      </div>
+      {totalPrice != 0 ? (
+        <div className="cart-detail">
+          {cart.map((item, index) => {
+            return (
+              <div key={index}>
+                <CartItem
+                  flag={true}
+                  title={item.title}
+                  price={item.price}
+                  img={item.img}
+                  id={item.id}
+                  count={item.count}
+                />
+              </div>
+            );
+          })}
+          {totalPrice != 0 ? (
+            <div className="total-price">
+              <p>CART TOTAL</p>
+              <hr className="hr" />
+              <p>
+                TOTAL <span className="price-span">{totalPrice}$</span>
+              </p>
+              <a className="checkout-btn">PROCEED TO CHECKOUT</a>
+              <span className="explanation">
+                Ceratin - Pottery And Ceramics Handmade Shopify Theme Processes
+                All Orders In USD. While The Content Of Your Cart Is Currently
+                Displayed In USD, The Checkout Will Use USD At The Most Current
+                Exchange Rate.
+              </span>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+      ) : (
+        <div className="empty">
+          <span className="empty-cart-span">YOUR CART IS EMPTY</span>
+          <br />
+          <a
+            className="empty-cart-btn"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Go To Shop
+          </a>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default CartDetail;

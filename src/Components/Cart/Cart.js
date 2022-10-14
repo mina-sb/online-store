@@ -3,7 +3,7 @@ import "./Cart.scss";
 import { VscChromeClose } from "react-icons/vsc";
 import { AppContext } from "../../AppContext";
 import CartItem from "../CartItem/CartItem";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartContext, showCart, backdrop, cartTotalPrice } =
@@ -17,6 +17,11 @@ const Cart = () => {
   const closeCart = () => {
     setCartState(false);
     setbackdropState(false);
+  };
+  const viewCartDetail = () => {
+    setCartState(false);
+    setbackdropState(false);
+    navigate("/cart");
   };
 
   let total = 0;
@@ -62,7 +67,9 @@ const Cart = () => {
             <span className="price">${totalPrice}</span>
           </div>
           <div className="cart-final-btns">
-            <a className="view-cart">View Cart</a>
+            <a onClick={viewCartDetail} className="view-cart">
+              View Cart
+            </a>
             <a className="check-out">Check Out</a>
           </div>
         </div>

@@ -34,23 +34,50 @@ const CartItem = (props) => {
   };
 
   return (
-    <div className="cart-item">
-      <div className="cart-item-img">
-        <img src={props.img} />
-      </div>
-      <div className="cart-item-info">
-        <h3>{props.title}</h3>
-        <p>{props.price}$</p>
-        <div className="addRemove">
-          <span className="addRemove-btn">
-            <VscChevronDown onClick={removeItem} />
-          </span>
-          <span className="count">{props.count}</span>
-          <span className="addRemove-btn">
-            <VscChevronUp onClick={addItem} />
-          </span>
+    <div>
+      {!props.flag ? (
+        <div className="cart-item">
+          <div className="cart-item-img">
+            <img src={props.img} />
+          </div>
+          <div className="cart-item-info">
+            <h3>{props.title}</h3>
+            <p>{props.price}$</p>
+            <div className="addRemove">
+              <span className="addRemove-btn">
+                <VscChevronDown onClick={removeItem} />
+              </span>
+              <span className="count">{props.count}</span>
+              <span className="addRemove-btn">
+                <VscChevronUp onClick={addItem} />
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="cart-detail-item">
+          <div className="img-title">
+            <div className="cart-detail-item-img">
+              <img src={props.img} />
+            </div>
+            <div className="cart-detail-item-info">
+              <h3>{props.title}</h3>
+              <p>size : 38</p>
+            </div>
+          </div>
+          <p className="cart-detail-price">{props.price}$</p>
+          <div className="addRemove-detail">
+            <span className="addRemove-btn">
+              <VscChevronDown onClick={removeItem} />
+            </span>
+            <span className="count">{props.count}</span>
+            <span className="addRemove-btn">
+              <VscChevronUp onClick={addItem} />
+            </span>
+          </div>
+          <p className="cart-detail-price">{props.count * props.price}$</p>
+        </div>
+      )}
     </div>
   );
 };
