@@ -2,11 +2,16 @@ import React, { useContext } from "react";
 import "./CartItem.scss";
 import { VscChevronUp, VscChevronDown } from "react-icons/vsc";
 import { AppContext } from "../../AppContext";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartItem = (props) => {
-  const { cartContext, cartTotalPrice } = useContext(AppContext);
+  const { cartContext, cartTotalPrice, showCart, backdrop } =
+    useContext(AppContext);
   const [cart, setCart] = cartContext;
   const [totalPrice, setTotalPrice] = cartTotalPrice;
+  const [cartState, setCartState] = showCart;
+  const [backdropState, setbackdropState] = backdrop;
+  const navigate = useNavigate();
 
   const addItem = () => {
     const productIndex = cart.findIndex((item) => item.id == props.id);
@@ -33,15 +38,20 @@ const CartItem = (props) => {
     }
   };
 
+  const goToDetailPage = () => {
+    navigate(`/detail/${props.id}`);
+    setCartState(false);
+    setbackdropState(false);
+  };
   return (
     <div>
       {!props.flag ? (
         <div className="cart-item">
           <div className="cart-item-img">
-            <img src={props.img} />
+            <img src={props.img} onClick={goToDetailPage} />
           </div>
           <div className="cart-item-info">
-            <h3>{props.title}</h3>
+            <h3 onClick={goToDetailPage}>{props.title}</h3>
             <p>{props.price}$</p>
             <div className="addRemove">
               <span className="addRemove-btn">
@@ -58,10 +68,14 @@ const CartItem = (props) => {
         <div className="cart-detail-item">
           <div className="img-title">
             <div className="cart-detail-item-img">
-              <img src={props.img} />
+              <Link to={`/detail/${props.id}`}>
+                <img src={props.img} />
+              </Link>
             </div>
             <div className="cart-detail-item-info">
-              <h3>{props.title}</h3>
+              <Link to={`/detail/${props.id}`}>
+                <h3>{props.title}</h3>
+              </Link>
             </div>
           </div>
           <p className="cart-detail-price">{props.price}$</p>
