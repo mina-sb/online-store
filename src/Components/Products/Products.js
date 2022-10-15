@@ -34,7 +34,6 @@ const Products = (props) => {
   };
 
   useEffect(() => {
-    console.log("ds");
     if (!showSearchResults) {
       getData();
     } else {

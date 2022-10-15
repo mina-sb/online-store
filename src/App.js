@@ -16,9 +16,10 @@ import LeftSideMenu from "./Components/LeftSideMenu/LeftSideMenu";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import CartDetail from "./Components/CartDetail/CartDetail";
 import WishList from "./Components/WishList/WishList";
+import QuickView from "./Components/QuickView/QuickView";
 
 function App() {
-  const { showCart, backdrop, searchState } = useContext(AppContext);
+  const { showCart, backdrop, searchState, quickview } = useContext(AppContext);
   const [cartState, setCartState] = showCart;
   const [backdropState, setbackdropState] = backdrop;
   const [search, setSearch] = searchState;
@@ -39,6 +40,7 @@ function App() {
       <LeftSideMenu />
       <Search />
       <Login />
+      <QuickView />
       <Footer />
     </div>
   );

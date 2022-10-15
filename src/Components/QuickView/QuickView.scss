@@ -1,0 +1,90 @@
+@import '../../App.scss';
+
+.quick-view{
+    width: 75%;
+    background-color: $white;
+    position: fixed;
+    top: 1.6rem;
+    transition: all 2s;
+    z-index: 10000;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    margin: 0 auto; /* Will not center vertically and won't work in IE6/7. */
+    left: 0;
+    right: 0;
+    transform: translateY(-50rem);
+}
+.quick-view-show{
+    transform: translateY(1.6rem);
+}
+.quick-view-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-view-img{
+    flex : 0 0 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail-container{
+    display: flex;
+    flex-direction: row;
+    gap:0.3rem;
+    margin-top: 0.4rem;
+    justify-content: space-between;
+    
+}
+.thumbnail-container div{
+    flex: 0 0 32%;
+}
+.thumbnail-container div img{
+object-fit: cover;
+cursor: pointer;}
+
+.quick-view-info{
+padding-left: 1.5rem;
+margin-right: 1rem;
+box-sizing: border-box;
+flex : 0 0 50%;
+}
+.quick-view-info-h3{
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-block-end: 0.7rem;
+}
+.quick-view-info-h4{
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: $darkGray; 
+}
+.quick-view-info-p{
+    color: $darkGray;
+}
+
+@media screen and (min-width : 700px) {
+    .quick-view{
+        width: 75%;
+    }
+    .quick-view-container{
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width : 800px) {
+    .quick-view{
+        width: 65%;
+    }
+}
+@media screen and (min-width :900px) {
+    .quick-view{
+        width: 55%;
+    }
+}
+@media screen and (min-width : 1300px) {
+    .quick-view{
+        width: 45%;
+    }
+}

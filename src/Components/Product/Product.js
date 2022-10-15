@@ -3,17 +3,27 @@ import "./Product.scss";
 import { VscPaintcan } from "react-icons/vsc";
 import { FiShoppingCart } from "react-icons/fi";
 import { AppContext } from "../../AppContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import QuickView from "../QuickView/QuickView";
+import { IconName } from "react-icons/gr";
 
 const Product = ({ id, firstImg, title, price }) => {
-  const { cartContext, backdrop, showCart, wishlistContext, productsContext } =
-    useContext(AppContext);
+  const {
+    cartContext,
+    backdrop,
+    showCart,
+    wishlistContext,
+    productsContext,
+    quickview,
+  } = useContext(AppContext);
   const [cart, setCart] = cartContext;
   const [backdropState, setbackdropState] = backdrop;
   const [cartState, setCartState] = showCart;
   const [wishlist, setWishlist] = wishlistContext;
   const [products, setProducts] = productsContext;
+  const [selectedProduct, setSelectedProduct] = quickview;
+  const navigate = useNavigate();
 
   const [img, setImg] = useState(false);
   const [wished, setWished] = useState(-1);
@@ -51,6 +61,15 @@ const Product = ({ id, firstImg, title, price }) => {
       setWishlist([...temp]);
     }
   };
+
+  const addToQuickview = () => {
+    const product = products.filter((item) => {
+      return item.id === id;
+    });
+    setSelectedProduct(product[0]);
+    setbackdropState(true);
+  };
+
   useEffect(() => {
     setWished(wishlist.findIndex((item) => item.id == id));
   }, []);
@@ -78,7 +97,7 @@ const Product = ({ id, firstImg, title, price }) => {
           )}
         </div>
         <div className="item">
-          <VscPaintcan className="quick-view-btn" />
+          <VscPaintcan className="quick-view-btn" onClick={addToQuickview} />
           <span className="tooltip">quick view</span>
         </div>
       </div>

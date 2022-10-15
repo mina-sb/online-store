@@ -16,6 +16,7 @@ export const AppProvider = (props) => {
   const [showLogin, setShowLogin] = useState(false);
   const [leftmenu, setLeftmenu] = useState(false);
   const [wishlist, setWishlist] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState({ id: -1 });
 
   return (
     <AppContext.Provider
@@ -33,6 +34,7 @@ export const AppProvider = (props) => {
         loginState: [showLogin, setShowLogin],
         leftmenuState: [leftmenu, setLeftmenu],
         wishlistContext: [wishlist, setWishlist],
+        quickview: [selectedProduct, setSelectedProduct],
       }}
     >
       {props.children}
