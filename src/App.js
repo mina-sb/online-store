@@ -17,6 +17,7 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 import CartDetail from "./Components/CartDetail/CartDetail";
 import WishList from "./Components/WishList/WishList";
 import QuickView from "./Components/QuickView/QuickView";
+import ContactUS from "./Components/ContactUs/ContactUs";
 
 function App() {
   const { showCart, backdrop, searchState, quickview } = useContext(AppContext);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/cart" element={<CartDetail />} />
         <Route path="/wishlist" element={<WishList />} />
+        <Route path="/contact" element={<ContactUS />} />
       </Routes>
       {backdropState ? <Backdrop /> : ""}
       <Cart />
