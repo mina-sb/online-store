@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import QuickView from "../QuickView/QuickView";
 import { IconName } from "react-icons/gr";
+import useWindowDimensions from "../../useWindowDimensions";
 
 const Product = ({ id, firstImg, title, price }) => {
   const {
@@ -24,6 +25,8 @@ const Product = ({ id, firstImg, title, price }) => {
   const [products, setProducts] = productsContext;
   const [selectedProduct, setSelectedProduct] = quickview;
   const navigate = useNavigate();
+
+  const { height, width } = useWindowDimensions();
 
   const [img, setImg] = useState(false);
   const [wished, setWished] = useState(-1);
@@ -63,11 +66,15 @@ const Product = ({ id, firstImg, title, price }) => {
   };
 
   const addToQuickview = () => {
-    const product = products.filter((item) => {
-      return item.id === id;
-    });
-    setSelectedProduct(product[0]);
-    setbackdropState(true);
+    if (width > 700) {
+      const product = products.filter((item) => {
+        return item.id === id;
+      });
+      setSelectedProduct(product[0]);
+      setbackdropState(true);
+    } else {
+      navigate(`/detail/${id}`);
+    }
   };
 
   useEffect(() => {
