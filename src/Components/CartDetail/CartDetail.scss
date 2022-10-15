@@ -21,10 +21,10 @@
     color: $lightGray;
 }
 .cart-detail{
-    margin: 5rem 8rem;
+    margin: 2rem 0rem;
 }
 .total-price{
-    margin: 2rem 2rem 1rem 2rem;
+    margin: 4rem 2rem 1rem 2rem;
     border: 1px solid $lightestGray;
     padding: 3rem 2rem;
 }
@@ -77,4 +77,22 @@ cursor: pointer;
     color: $white;
     font-size: 0.9rem;
     cursor: pointer;
+}
+.table-title{
+    display: none;
+}
+@media screen and (min-width : 400px) {
+    .cart-detail{
+        margin: 2rem 1rem;
+    }
+}
+@media screen and (min-width : 550px) {
+    .table-title{
+        display: flex;
+    }
+}
+@media screen and (min-width : 800px) {
+    .cart-detail{
+        margin: 5rem 8rem;
+    }
 }

@@ -17,6 +17,21 @@ const CartDetail = () => {
       </div>
       {totalPrice != 0 ? (
         <div className="cart-detail">
+          <div className="cart-detail-item table-title">
+            <div className="img-title">
+              <div className="cart-detail-item-img">
+                <p></p>
+              </div>
+              <div className="cart-detail-item-info">
+                <h3>title</h3>
+              </div>
+            </div>
+            <p className="cart-detail-price"> price</p>
+            <div className="addRemove-detail">
+              <span className="count">count</span>
+            </div>
+            <p className="cart-detail-price">total price</p>
+          </div>
           {cart.map((item, index) => {
             return (
               <div key={index}>
