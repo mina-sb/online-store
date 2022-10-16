@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa";
 
 import { BsChevronRight } from "react-icons/bs";
 import { AppContext } from "../../AppContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LeftSideMenu = () => {
   const { leftmenuState, backdrop } = useContext(AppContext);
@@ -28,10 +28,12 @@ const LeftSideMenu = () => {
       <div className="menu">
         <ul>
           <li>
-            <div className="menu-item">
-              <a>HOME</a>
-              <BsChevronRight />
-            </div>
+            <Link onClick={closeCart} to="/">
+              <div className="menu-item">
+                <a>HOME</a>
+                <BsChevronRight />
+              </div>
+            </Link>
           </li>
           <li>
             <div className="menu-item">
@@ -40,22 +42,28 @@ const LeftSideMenu = () => {
             </div>
           </li>
           <li>
-            <div className="menu-item">
-              <a>RETURN</a>
-              <BsChevronRight />
-            </div>
+            <Link to="/wishlist" onClick={closeCart}>
+              <div className="menu-item">
+                <a>RETURN</a>
+                <BsChevronRight />
+              </div>
+            </Link>
           </li>
           <li>
-            <div className="menu-item">
-              <a>ABOUT US</a>
-              <BsChevronRight />
-            </div>
+            <Link onClick={closeCart} to="/about">
+              <div className="menu-item">
+                <a>ABOUT US</a>
+                <BsChevronRight />
+              </div>
+            </Link>
           </li>
           <li>
-            <div className="menu-item">
-              <a>CONTACT US</a>
-              <BsChevronRight />
-            </div>
+            <Link onClick={closeCart} to="/contact">
+              <div className="menu-item">
+                <a>CONTACT US</a>
+                <BsChevronRight />
+              </div>
+            </Link>
           </li>
         </ul>
       </div>

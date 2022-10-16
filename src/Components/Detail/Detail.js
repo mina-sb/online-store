@@ -3,6 +3,7 @@ import { AppContext } from "../../AppContext";
 import { useLocation, useParams } from "react-router-dom";
 import Products from "../Products/Products";
 import { VscTriangleDown, VscTriangleUp } from "react-icons/vsc";
+import { SaveToLocal } from "../../LocalStorageFunctions";
 import {
   FaRegHeart,
   FaTwitter,
@@ -27,6 +28,7 @@ const Detail = () => {
   const { id } = useParams();
   const [counter, setCounter] = useState(0);
   const [slider, setSlider] = useState(0);
+  const [localFlag, setLocalFlag] = useState(false);
 
   const location = useLocation();
   if (location.pathname.includes("/detail")) {
@@ -66,8 +68,16 @@ const Detail = () => {
         setbackdropState(true);
         setCartState(true);
       }
+      setLocalFlag(!localFlag);
     }
   };
+
+  useEffect(() => {
+    if (localFlag) {
+      SaveToLocal(cart);
+      setLocalFlag(!localFlag);
+    }
+  }, [localFlag]);
 
   return (
     <div className="detail">

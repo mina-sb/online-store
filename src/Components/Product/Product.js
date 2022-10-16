@@ -8,6 +8,7 @@ import { FaRegHeart, FaHeart } from "react-icons/fa";
 import QuickView from "../QuickView/QuickView";
 import { IconName } from "react-icons/gr";
 import useWindowDimensions from "../../useWindowDimensions";
+import { SaveToLocal } from "../../LocalStorageFunctions";
 
 const Product = ({ id, firstImg, title, price }) => {
   const {
@@ -24,6 +25,8 @@ const Product = ({ id, firstImg, title, price }) => {
   const [wishlist, setWishlist] = wishlistContext;
   const [products, setProducts] = productsContext;
   const [selectedProduct, setSelectedProduct] = quickview;
+  const [localFlag, setLocalFlag] = useState(false);
+
   const navigate = useNavigate();
 
   const { height, width } = useWindowDimensions();
@@ -49,6 +52,7 @@ const Product = ({ id, firstImg, title, price }) => {
     }
     setbackdropState(true);
     setCartState(true);
+    setLocalFlag(!localFlag);
   };
 
   const addToWishlist = () => {
@@ -80,6 +84,13 @@ const Product = ({ id, firstImg, title, price }) => {
   useEffect(() => {
     setWished(wishlist.findIndex((item) => item.id == id));
   }, []);
+
+  useEffect(() => {
+    if (localFlag) {
+      SaveToLocal(cart);
+      setLocalFlag(!localFlag);
+    }
+  }, [localFlag]);
 
   return (
     <div className="product">

@@ -3,6 +3,7 @@ import "./CartItem.scss";
 import { VscChevronUp, VscChevronDown } from "react-icons/vsc";
 import { AppContext } from "../../AppContext";
 import { Link, useNavigate } from "react-router-dom";
+import { SaveToLocal } from "../../LocalStorageFunctions";
 
 const CartItem = (props) => {
   const { cartContext, cartTotalPrice, showCart, backdrop } =
@@ -20,6 +21,7 @@ const CartItem = (props) => {
       let tempCart = [...cart];
       tempCart[productIndex].count++;
       setCart(tempCart);
+      SaveToLocal(cart);
     }
   };
   const removeItem = () => {
@@ -35,6 +37,7 @@ const CartItem = (props) => {
         setCart(tempCart);
         setTotalPrice(0);
       }
+      SaveToLocal(cart);
     }
   };
 

@@ -1,5 +1,5 @@
 import "./App.scss";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Backdrop from "./Components/Backdrop/Backdrop";
 import Cart from "./Components/Cart/Cart";
 import MainNav from "./Components/MainNav/MainNav";
@@ -20,10 +20,20 @@ import QuickView from "./Components/QuickView/QuickView";
 import ContactUS from "./Components/ContactUs/ContactUs";
 
 function App() {
-  const { showCart, backdrop, searchState, quickview } = useContext(AppContext);
+  const { showCart, backdrop, searchState, quickview, cartContext } =
+    useContext(AppContext);
   const [cartState, setCartState] = showCart;
   const [backdropState, setbackdropState] = backdrop;
   const [search, setSearch] = searchState;
+  const [cart, setCart] = cartContext;
+
+  useEffect(() => {
+    const temp = JSON.parse(localStorage.getItem("cart"));
+    if (temp) {
+      console.log(temp.length);
+      setCart(temp);
+    }
+  }, []);
 
   return (
     <div className={backdropState ? "App fixed" : "App"}>

@@ -148,18 +148,18 @@ cursor: pointer;
 }
 
 
-
-
-
-
 @media screen and (min-width :600px) { 
     .cart{
         width: 50%;
     }
 }
-
-@media screen and (min-width : 900px) { 
+@media screen and (min-width : 800px) { 
     .cart{
-        width: 30%;
+        width: 35%;
+    } 
+}
+@media screen and (min-width : 1200px) { 
+    .cart{
+        width:30%;
     } 
 }

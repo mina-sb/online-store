@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../AppContext";
 import "./QuickView.scss";
 import { VscTriangleDown, VscTriangleUp } from "react-icons/vsc";
+import { SaveToLocal } from "../../LocalStorageFunctions";
 
 const QuickView = () => {
   const { quickview, productsContext, backdrop, cartContext } =
@@ -12,6 +13,7 @@ const QuickView = () => {
   const [cart, setCart] = cartContext;
   const [backdropState, setbackdropState] = backdrop;
   const [counter, setCounter] = useState(0);
+  const [localFlag, setLocalFlag] = useState(false);
 
   const addToCart = () => {
     if (counter > 0) {
@@ -36,11 +38,21 @@ const QuickView = () => {
       }
       setbackdropState(false);
       setSelectedProduct({ id: -1 });
+      setLocalFlag(!localFlag);
     }
   };
+
   useEffect(() => {
     setCounter(0);
   }, [selectedProduct]);
+
+  useEffect(() => {
+    if (localFlag) {
+      SaveToLocal(cart);
+      setLocalFlag(!localFlag);
+    }
+  }, [localFlag]);
+
   return (
     <div
       className={
