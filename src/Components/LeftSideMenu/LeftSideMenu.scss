@@ -52,6 +52,10 @@
 .menu-item a{
     font-weight: 200;
 }
+.menu-item a:active{
+    font-weight: 200;
+    color: $cream;
+}
 .close-leftMenu{
     width: 100%;
     background-color: $cream;
