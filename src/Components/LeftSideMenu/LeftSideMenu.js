@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import "./LeftSideMenu.scss";
-import { VscChromeClose } from "react-icons/vsc";
 import { FaBars } from "react-icons/fa";
 
 import { BsChevronRight } from "react-icons/bs";

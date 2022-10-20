@@ -1,0 +1,42 @@
+@import '../../App.scss';
+.admin{
+    width: 100%;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    width: 60%;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 0.8rem 4rem;
+    flex: 0 0 75%;
+}
+.side-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    flex: 0 0 25%;
+}
+.menu-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+}
+.active-item{
+    background-color: $cream;
+}
+.menu-item a{
+    font-weight: 200;
+}
+.menu-item a:active{
+    font-weight: 200;
+    color: $cream;
+}
+@media screen and (min-width : 700px) {
+    .admin{
+       flex-direction: row;
+    }
+}

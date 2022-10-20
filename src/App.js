@@ -18,6 +18,7 @@ import CartDetail from "./Components/CartDetail/CartDetail";
 import WishList from "./Components/WishList/WishList";
 import QuickView from "./Components/QuickView/QuickView";
 import ContactUS from "./Components/ContactUs/ContactUs";
+import Admin from "./Components/Admin/Admin";
 
 function App() {
   const { showCart, backdrop, searchState, quickview, cartContext } =
@@ -30,7 +31,6 @@ function App() {
   useEffect(() => {
     const temp = JSON.parse(localStorage.getItem("cart"));
     if (temp) {
-      console.log(temp.length);
       setCart(temp);
     }
   }, []);
@@ -46,6 +46,7 @@ function App() {
         <Route path="/cart" element={<CartDetail />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/contact" element={<ContactUS />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       {backdropState ? <Backdrop /> : ""}
       <Cart />

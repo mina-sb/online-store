@@ -43,11 +43,11 @@ const MainNav = () => {
         <li>
           <Link to="/wishlist">Wishlist</Link>
         </li>
-        <li className={flag ? "responsive" : ""}>
-          <Link to="/about">About Us</Link>
-        </li>
         <li>
           <Link to="/contact">Contact Us</Link>
+        </li>
+        <li>
+          <Link to="/admin">Admin</Link>
         </li>
         <li className="menu-bars">
           <FaBars onClick={showLeftMenu} />
