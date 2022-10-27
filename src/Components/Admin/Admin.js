@@ -10,44 +10,52 @@ const Admin = () => {
   const changeTab = () => {};
 
   return (
-    <div className="admin">
-      <div className="side-menu">
-        <div
-          className={`menu-item ${tab == 0 ? "active-item" : ""}`}
-          onClick={() => {
-            setTab(0);
-          }}
-        >
-          <a>Add a product</a>
-          <BsChevronRight />
-        </div>
-        <div
-          className={`menu-item ${tab == 1 ? "active-item" : ""}`}
-          onClick={() => {
-            setTab(1);
-          }}
-        >
-          <a>Update product</a>
-          <BsChevronRight />
-        </div>
-        <div
-          className={`menu-item ${tab == 2 ? "active-item" : ""}`}
-          onClick={() => {
-            setTab(2);
-          }}
-        >
-          <a>Delete product</a>
-          <BsChevronRight />
-        </div>
+    <div>
+      <div className="cart-detail-header">
+        <h3 className="cart-h3">Admin</h3>
+        <span className="cart-span"> HOME - ADMIN PAGE</span>
       </div>
-      <div className="container">
-        {tab == 0
-          ? "add component"
-          : tab == 1
-          ? "update component"
-          : tab == 2
-          ? "delete component"
-          : ""}
+      <div className="admin">
+        <div className="side-menu">
+          <div
+            className={`menu-item ${tab == 0 ? "active-item" : ""}`}
+            onClick={() => {
+              setTab(0);
+            }}
+          >
+            <a>Add a product</a>
+            <BsChevronRight />
+          </div>
+          <div
+            className={`menu-item ${tab == 1 ? "active-item" : ""}`}
+            onClick={() => {
+              setTab(1);
+            }}
+          >
+            <a>Update product</a>
+            <BsChevronRight />
+          </div>
+          <div
+            className={`menu-item ${tab == 2 ? "active-item" : ""}`}
+            onClick={() => {
+              setTab(2);
+            }}
+          >
+            <a>Delete product</a>
+            <BsChevronRight />
+          </div>
+        </div>
+        <div className="container">
+          {tab == 0 ? (
+            <AddProduct />
+          ) : tab == 1 ? (
+            "update component"
+          ) : tab == 2 ? (
+            "delete component"
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

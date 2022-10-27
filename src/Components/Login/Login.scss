@@ -32,7 +32,7 @@
     margin-block-start: 0em;
     font-weight: 300;
 }
-.form-input{
+.form-input , select{
     padding: 1rem;
     border: 1px solid $lightestGray;
     outline: none;
