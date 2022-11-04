@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/online-store/static/css/main.a1151d2b.css",
-    "main.js": "/online-store/static/js/main.16505835.js",
+    "main.css": "/online-store/static/css/main.90d94cd3.css",
+    "main.js": "/online-store/static/js/main.b232734f.js",
     "static/js/787.a92fe09e.chunk.js": "/online-store/static/js/787.a92fe09e.chunk.js",
     "static/media/Dosis-SemiBold.ttf": "/online-store/static/media/Dosis-SemiBold.3580e72c820988314c09.ttf",
     "static/media/Dosis-Medium.ttf": "/online-store/static/media/Dosis-Medium.50346366837ca02cca28.ttf",
@@ -10,12 +10,12 @@
     "static/media/Dosis-Bold.ttf": "/online-store/static/media/Dosis-Bold.da853f581cae1859ee0a.ttf",
     "static/media/Dosis-Book.ttf": "/online-store/static/media/Dosis-Book.d4d759f9f74aff4a7a60.ttf",
     "index.html": "/online-store/index.html",
-    "main.a1151d2b.css.map": "/online-store/static/css/main.a1151d2b.css.map",
-    "main.16505835.js.map": "/online-store/static/js/main.16505835.js.map",
+    "main.90d94cd3.css.map": "/online-store/static/css/main.90d94cd3.css.map",
+    "main.b232734f.js.map": "/online-store/static/js/main.b232734f.js.map",
     "787.a92fe09e.chunk.js.map": "/online-store/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1151d2b.css",
-    "static/js/main.16505835.js"
+    "static/css/main.90d94cd3.css",
+    "static/js/main.b232734f.js"
   ]
 }
